@@ -80,6 +80,8 @@ protected:
 	* @see updateWindowTitle()
 	*/
 	void setTextChanged(bool state);
+	
+
 
 	/**
 	 * @brief Rebuilds the window title from @ref DoxygenExample::currentPath and @ref DoxygenExample::textChanged.
