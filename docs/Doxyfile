@@ -1,0 +1,127 @@
+# ============================================================
+#  Doxygen konfiguračný súbor
+#  Portable verzia Doxygen a Graphviz (funguje bez inštalácie, len s rozbalenými ZIP súbormi)
+# ============================================================
+
+
+# --- ZÁKLADNÉ INFORMÁCIE O PROJEKTE --------------------------
+
+# Názov projektu – zobrazí sa na titulnej stránke dokumentácie
+PROJECT_NAME           = "DoxygenExample"
+
+# Kam sa uloží výstup (relatívne k pracovnému priečinku docs/)
+# Odporúčanie: používať podpriečinok „out“, aby sa repozitár nezaplnil HTML súbormi
+OUTPUT_DIRECTORY       = ./out
+
+# Generovanie HTML dokumentácie (hlavný formát)
+GENERATE_HTML          = YES
+
+# Generovanie LaTeX (PDF) – vypnuté, aby sa zbytočne negenerovali stovky súborov
+GENERATE_LATEX         = NO
+
+
+
+# --- ZDROJOVÉ SÚBORY -----------------------------------------
+
+# Kde sa nachádzajú zdrojové súbory projektu (v našej štruktúre sú v ../src)
+INPUT                  = ../src
+
+# Dokumentujeme C++ zdrojové súbory. Súbor .ui je XML formulár Qt Designera.
+FILE_PATTERNS          = *.h *.cpp
+
+# Ak má projekt podpriečinky, prechádza ich rekurzívne
+RECURSIVE              = YES
+
+
+
+# --- EXTRAKCIA INFORMÁCIÍ Z KÓDU ------------------------------
+
+# Hodnota NO zachová varovania o chýbajúcich dokumentačných komentároch.
+EXTRACT_ALL            = NO
+
+# Zahrnie aj dokumentované privátne členy, napríklad ukážku @deprecated.
+EXTRACT_PRIVATE        = YES
+
+# Dokumentovať aj statické (static) metódy – áno, tie sú často dôležité
+EXTRACT_STATIC         = YES
+
+# Použiť prvú vetu komentára /** ... */ ako stručný popis.
+JAVADOC_AUTOBRIEF      = YES
+
+# Použiť prvú vetu komentára v štýle Qt ako stručný popis.
+QT_AUTOBRIEF           = YES
+
+# Varovania, ak niečo nie je zdokumentované
+WARN_IF_UNDOCUMENTED   = YES
+
+# Varovania, ak je v komentári chyba (napr. @param bez názvu)
+WARN_IF_DOC_ERROR      = YES
+
+
+
+# --- DIAGRAMY (GRAPHVIZ) -------------------------------------
+
+# Aktivuje generovanie UML diagramov a vzťahov
+HAVE_DOT               = YES
+
+# Lokálna cesta k prenosnému Graphvizu pre Windows.
+# Workflow túto hodnotu vyprázdni, aby Doxygen našiel systémový dot v PATH.
+DOT_PATH               = ../tools/graphviz
+
+# Použije UML-štýl symbolov (namiesto jednoduchých boxov)
+UML_LOOK               = YES
+
+# Pridá typy atribútov a parametre metód do UML diagramov.
+DOT_UML_DETAILS        = YES
+
+# Formát obrázkov v HTML – SVG je najkvalitnejší (zoomovateľný)
+DOT_IMAGE_FORMAT       = svg
+
+# Generovať grafy volaní funkcií (môže byť pomalé)
+CALL_GRAPH             = NO
+
+# Generovať grafy, kto volá danú funkciu (tiež spomaľuje)
+CALLER_GRAPH           = NO
+
+
+# --- ZOBRAZENIE KÓDU A FORMÁTOVANIE ---------------------------
+
+# Pridať sekciu „Source“ v HTML – umožní zobraziť kód s preklikmi
+SOURCE_BROWSER         = YES
+
+# Zobrazovať kód priamo pod popisom metódy (neodporúčané pre väčšie projekty)
+INLINE_SOURCES         = NO
+
+# Odstrániť komentáre z ukážok kódu – NIE, chceme ich zachovať
+STRIP_CODE_COMMENTS    = NO
+
+# V HTML zobraziť názvy súborov bez úplných ciest.
+FULL_PATH_NAMES        = NO
+
+# --- ĎALŠIE MOŽNOSTI (na doplnenie podľa potreby) -------------
+
+# Priečinok pre obrázky použité cez @image.
+IMAGE_PATH             = images
+
+# Priečinok so zdrojovými ukážkami vkladanými cez @snippet.
+EXAMPLE_PATH           = ../src
+
+# Generovať interaktívne rozbaľovacie menu v HTML
+GENERATE_TREEVIEW      = YES
+
+# Jazyk výstupu – mení nadpisy sekcií (Class, File → Trieda, Súbor)
+# OUTPUT_LANGUAGE        = Slovak
+
+# Pridanie loga na titulnú stránku
+# PROJECT_LOGO           = ../docs/logo.png
+
+# --- KONIEC SÚBORU --------------------------------------------
+# Na spustenie dokumentácie:
+#   cd docs
+#   ..\tools\doxygen\doxygen.exe Doxyfile
+#
+# Výsledok sa uloží do:
+#   docs/out/html/index.html
+#
+# ============================================================
+
